@@ -8,7 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
 steps:
       - name: Checkout del código
         uses: actions/checkout@v4
@@ -20,3 +19,12 @@ steps:
 
       - name: Construir app con node
         run: npm install
+
+
+      - name: Verificar si app.js existe
+        run: |
+          if [!-f"${GITHUB_WORKSPACE}/app.js"]; then
+            echo "No se encontró el archivo app.js en la raíz."
+            exit 1
+          fi
+          echo "Se encontró el archivo app.js. Continuando con el workflow."
