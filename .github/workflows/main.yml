@@ -27,5 +27,5 @@ jobs:
           fi
           echo "Se encontró el archivo app.js. Continuando con el workflow."
 
-      - name: Probar aplicación con tests de Jest
+      - name: Probar aplicacion con tests de Jest
         run: npm test
